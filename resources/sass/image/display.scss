@@ -1,0 +1,38 @@
+// profile picture
+.box-photo {
+    height: 7rem;
+    width: 7rem;
+    margin: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    text-align: center;
+    background-color: #333;
+    color: #eee;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#dp {
+    object-fit: cover; 
+    position: relative; 
+    top: 0; 
+    left: 0; 
+    /* border: 1px red solid; */
+}
+#cam {
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px; 
+    /* border: 1px green solid;  */
+}
+.box-photo:hover #dp {
+    transform: scale(1.2);
+}
+.center-cropped {
+    background-position: center center;
+    background-repeat: no-repeat;
+}

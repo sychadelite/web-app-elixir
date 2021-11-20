@@ -1,0 +1,44 @@
+aside {
+    header {
+        h1 a {
+            font-size: 1.625rem;
+            color: $black-80;
+            display: block;
+            &:hover {
+                color: $black-30;
+            }
+        }
+        h2 {
+            font-size: 1rem;
+            color: $indigo;
+            font-weight: 400;
+            margin-top: $spacing * 2.25;
+            line-height: $lh-copy;
+        }
+    }
+    nav {
+        margin-top: $spacing * 24;
+        .nav-item {
+            color: $black-80;
+            font-family: 'Ubuntu', sans-serif;
+            display: block;
+            font-weight: 700;
+            &:hover {
+                color: $indigo;
+            }
+            & + .nav-item {
+                margin-top: $spacing * 2.25;
+                border-top: 1px solid $black-30;
+                padding-top: $spacing * 2.25;
+            }
+            .nav-description {
+                color: $black-30;
+                font-family: 'Roboto', sans-serif;
+                display: block;
+                font-size: 0.8125rem;
+                margin-top: $spacing * 1.5;
+                font-weight: 400;
+            }
+        }
+    }
+}
