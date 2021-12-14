@@ -1,0 +1,53 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,900&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// layout
+@import 'layout/html.scss';
+@import 'layout/layout.scss';
+// @import 'layout/sidebar.scss';
+@import 'button/button.scss';
+@import 'image/display.scss';
+
+// root
+* {
+    transition: .2s;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+
+// global state
+    /* .active {
+        background-color: rgb(54, 75, 133);
+        color: #333;
+        padding: 8px;
+        border-radius: 5px;
+    } */
+
+
+// components
+.brand-text {
+    font-family: 'Fruktur', sans-serif;
+    color: rgb(58, 207, 182);
+}
+.form-footer {
+    margin-top: 2rem;
+}
+
+    /* .fixed-top {
+        position: fixed;
+        top: 0px;
+    } */
+
+
