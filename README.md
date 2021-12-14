@@ -79,3 +79,8 @@ Import Database Manually with 'db_pdam.sql' file.
 1. create '.env' file
 2. paste all key values from '.env.example' file
 3. DB_DATABASE=db_pdam
+
+## Run Website
+
+1. Run XAMPP Apache and MySQL Server
+2. php artisan serve
