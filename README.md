@@ -88,5 +88,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Administrator email & password
 
-Email: admin@elixir.web.apps.com
-Password: 123456789
+- Email: admin@elixir.web.apps.com
+- Password: 123456789
