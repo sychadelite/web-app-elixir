@@ -72,7 +72,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Database
 
-Import Database Manually with 'db_pdam.sql' file.
+1. Create Database name in PhpMyadmin: 'db_pdam'
+2. Import Database Manually with 'db_pdam.sql' file on it.
 
 ## .env
 
