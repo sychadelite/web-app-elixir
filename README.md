@@ -85,3 +85,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 1. Run XAMPP Apache and MySQL Server
 2. php artisan serve
+
+## Administrator email & password
+
+Email: admin@elixir.web.apps.com
+Password: 123456789
