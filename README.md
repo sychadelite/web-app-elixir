@@ -77,5 +77,5 @@ Import Database Manually with 'db_pdam.sql' file.
 ## .env
 
 1. create .env file
-2. paste all key values from .env-example
+2. paste all key values from .env.example
 3. DB_DATABASE=db_pdam
