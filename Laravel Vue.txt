@@ -1,0 +1,115 @@
+========================= Installation ==============================
+1. Environment Variables: set all php path to "C:/xampp/php"
+2. Composer: "https://getcomposer.org/Composer-Setup.exe"
+3. Laravel installation via composer: "https://laravel.com/docs/8.x#installation-via-composer"
+
+
+========================= Documentation =============================
+1. Frontend Laravel: "https://laravel.com/docs/6.x/frontend" 
+
+============================ Vue js =================================
+C:\xampp\htdocs\website\elixir-app>
+
+1. Install Required Vue js UI: "composer require laravel/ui"
+2. Generate basic or login/registration scaffolding: "php artisan ui vue" or "php artisan ui vue --auth"
+3. Install nodejs if you don't have one: https://phoenixnap.com/kb/install-node-js-npm-on-windows
+4. Download all package dependencies: "npm install"
+5. Run Development: "npm run dev"
+6. If Laravel Webpack Mix Build with npm run dev got an error: "npm install -D vue-loader vue-template-compiler"
+7. Vue Router Dependencies: "npm install vue-router"
+8. Run Laravel Server: "php artisan serve"
+9. Run Monitoring Front-end Server: "npm run watch"
+
+10. Configure Database: setup DB_DATABASE=<your-database-name> and the others on .env file
+11. Database Migration: "php artisan migrate"
+12. Create Seeder Folder for Dummy Dataset: "php artisan make:seeder UserSeeder"
+13. Dummy Dataset Seeding: https://laravel.com/docs/8.x/seeding#writing-seeders
+14. Don't forget to import DB, Hash, Faker for seeder and put in the seeder folder: use Illuminate\Support\Facades\DB; use Illuminate\Support\Facades\Hash; use Faker\Factory as Faker;
+15. Run Create Dataset Dummy: "php artisan db:seed --class=UserSeeder"
+16. For multiple class table: write script Calling Additional Seeders in the docs writing seeders
+17. Run Create Dataset Dummy for multiple class table: "php artisan db:seed"
+18. Rollback or Undo Database Migration: "php artisan migrate:rollback"
+19. Refresh Database Migration: "php artisan migrate:refresh --seed"
+
+20. Create Controller in app/Http/Controllers folder: "php artisan make:controller AuthController"
+21. Don't forget to import DB and put in AuthController file: use Illuminate\Support\Facades\DB;
+22. Create route for Database Query Builder in routes/web.php: https://laravel.com/docs/8.x/routing
+
+23. Create Service REST API in routes/api: copy route in web.php to api.php "Route::get('/users', [AuthController::class, 'indexAllUsers']);"
+24. Connect REST API Service to Vue.js template with Axios: use mounted() function on vue.js template
+25. If you wanna use Fetch Api instead of Axios: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+26. Fetching Data based on id: https://router.vuejs.org/guide/advanced/data-fetching.html#fetching-after-navigation
+
+27. Eloquent ORM Model: https://laravel.com/docs/8.x/eloquent
+28. Create Model database: if the table you are created is not following the standard of laravel, so declare your table name with "protected $table = 'your_table_name';"
+29. Join Database Table Laravel: https://www.tutsmake.com/laravel-eloquent-join-2-tables-example/#:~:text=If%20you%20want%20to%20join,relationships%20instead%20of%20laravel%20join.
+30. Update Database Table from Laravel: https://dev.to/mahmudulhsn/update-existing-table-with-migration-without-losing-in-data-in-laravel-fb1
+
+31. Insert Data to Database: create method request in AuthController, then create route post api for that method, and create handleSubmit() function to form like on Register.vue
+32. Insert Data to Database using Mass Asignment Laravel (more safety): https://laravel.com/docs/8.x/eloquent#mass-assignment
+33. Give Notification to User with vuejs-noty: npm install vuejs-noty
+34. Import VueNoty in resources/app.js: https://github.com/renoguyon/vuejs-noty
+35. Validation Data Laravel: https://laravel.com/docs/8.x/validation
+36. Available Validation Rule Laravel: https://laravel.com/docs/8.x/validation#available-validation-rules
+37. Manual Validation Laravel: https://laravel.com/docs/8.x/validation#manually-creating-validators
+38. Import Validator class in AuthController: "use Validator;"
+
+39. Delete Data with Laravel Eloquent ORM: https://laravel.com/docs/8.x/eloquent#deleting-models
+40. Update Data with Laravel Eloquent ORM: https://laravel.com/docs/8.x/eloquent#updates
+
+41. Migrate Database "ADD NEW COLUMN TO Models": php artisan make:migration add_column_photo_to_users_table --table=users  
+42. Create code in function up(): $table->string('photo')->after('status')->nullable();
+43. Create code in function down(): $table->dropColumn('photo');
+44. Execute: php artisan migrate
+
+45. Install Vue DevTools extension on browser for newbie: https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en
+46. Create new Controller with Artisan: "php artisan make:controller UserController"
+
+47. Install VueChart.js = "npm install vue-chartjs chart.js --save"
+48. Install VueChartKick.js = "npm install vue-chartkick chart.js"
+49. Chart.js (Works maybe) = https://www.chartjs.org/docs/master/getting-started/
+50. Chart.js in Vue.js = https://www.laravelcode.com/post/create-a-chart-using-chartjs-in-vuejs
+
+51. Access Laravel with Local IP in external device: php artisan serve --host 0.0.0.0
+
+52. Login: https://laravel.com/docs/7.x/authentication#login-throttling
+53. Sanctum: composer require laravel/sanctum
+55. Command: php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+54. Use sanctum Class on kernel.php: use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful; 
+55. Kernel.php for middleware: copy 'api' code from docs sanctum laravel
+56. Import Sanctum Tokens in User.php models: use Laravel\Sanctum\HasApiTokens;
+57. set config/cors.php: "'supports_credentials' => true,"
+58. Additional declaration in .env file: SESSION_DRIVER=file; SANCTUM_STATEFUL_DOMAINS=localhost,localhost:8000; SESSION_DOMAIN=localhost; SESSION_SECURE_COOKIE=false
+59. Create Protected Routes which needs tokens: 
+	// Protected routes
+	Route::group(['middleware' => ['auth:sanctum']], function () {
+    		Route::post('/logout', [AuthController::class, 'logoutUser']);
+	});
+60. For register or login user, the api can be placed on public routes 'auth::api' because that function controller just created a token and doesn't used yet.
+
+61. Passport: "composer require laravel/passport"
+62. Migrate Database: "php artisan migrate"
+63. Install Passport: "php artisan passport:install"
+64. Import Passport Tokens in User.php models: "use Laravel\Passport\HasApiTokens;"
+65. Call Passport routes in Providers AuthServiceProvider.php function boot(): "Passport::routes();" see the docs if confused
+66. Import Passport in Providers AuthServiceProvider.php: "use Laravel\Passport\Passport;"
+67. set the driver option of the api authentication guard to passport in config/auth.php: 
+	'api' => [
+        	'driver' => 'passport',
+        	'provider' => 'users',
+    	],
+68. Not Using... Loading Keys From The Environment: "php artisan vendor:publish --tag=passport-config"
+69. Passport login api function create token: https://laravel.com/docs/8.x/passport#personal-access-tokens
+70. Additional declaration in .env file: PASSPORT_PERSONAL_ACCESS_CLIENT_ID="client-id-value"; PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET="unhashed-client-secret-value"
+
+
+71. If id in Models/User.php was change from the default, you need to declare the primary key for creating sanctum tokens id in that models: "protected $primaryKey = 'nomor_pelanggan';"
+72. Vuex Store: https://webdevchallenges.com/use-protected-routes-in-vue-js
+73. https://levelup.gitconnected.com/fetch-api-data-with-axios-and-display-it-in-a-react-app-with-hooks-3f9c8fa89e7b
+
+74. Add bootstrap vue package: "npm install vue bootstrap bootstrap-vue"
+75. MDBootstrap for Vue: https://mdbootstrap.com/docs/vue/getting-started/installation/#laravel-existing
+76. VueTippy : https://www.npmjs.com/package/vue-tippy
+77. VueModal : https://euvl.github.io/vue-js-modal/ | https://www.npmjs.com/package/vue-js-modal/v/1.3.35 | http://vue-js-modal.yev.io/
+78. Vue Watchers : https://vuejs.org/v2/guide/computed.html#Watchers
+79. Bootstrap Vue Table : https://muhimasri.com/blogs/create-an-editable-dynamic-table-with-bootstrap-vue/
