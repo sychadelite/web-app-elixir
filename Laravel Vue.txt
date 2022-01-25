@@ -25,6 +25,9 @@ if got an compiler-sfc error, then try this:
 - npm add @vue/compiler-sfc -D
 - npm remove vue-template-compiler
 
+if can't install vuex, then try this:
+- npm install --save vuex@next
+
 10. Configure Database: setup DB_DATABASE=<your-database-name> and the others on .env file
 11. Database Migration: "php artisan migrate"
 12. Create Seeder Folder for Dummy Dataset: "php artisan make:seeder UserSeeder"
