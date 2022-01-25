@@ -20,6 +20,11 @@ C:\xampp\htdocs\website\elixir-app>
 8. Run Laravel Server: "php artisan serve"
 9. Run Monitoring Front-end Server: "npm run watch"
 
+if got an compiler-sfc error, then try this:
+- npm add vue@next
+- npm add @vue/compiler-sfc -D
+- npm remove vue-template-compiler
+
 10. Configure Database: setup DB_DATABASE=<your-database-name> and the others on .env file
 11. Database Migration: "php artisan migrate"
 12. Create Seeder Folder for Dummy Dataset: "php artisan make:seeder UserSeeder"
