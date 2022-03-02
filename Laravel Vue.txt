@@ -16,7 +16,7 @@ C:\xampp\htdocs\website\elixir-app>
 4. Download all package dependencies: "npm install"
 5. Run Development: "npm run dev"
 6. If Laravel Webpack Mix Build with npm run dev got an error: "npm install -D vue-loader vue-template-compiler"
-7. Vue Router Dependencies: "npm install vue-router"
+7. Vue Router Dependencies: "npm install vue-router" or "npm install vue-router@3"
 8. Run Laravel Server: "php artisan serve"
 9. Run Monitoring Front-end Server: "npm run watch"
 
